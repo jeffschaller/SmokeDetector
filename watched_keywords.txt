@@ -54564,3 +54564,24 @@
 1699169108	Nick	greenstardriving\.ca
 1699139619	Jeff Schaller	(?-i:^Khoa Dang$)
 1699142434	Vickel	group[\W_]*+stock[\W_]*+management
+1699260930	cigien	oecd-forum\.org
+1699260988	cigien	stmbet\.rest
+1699261008	cigien	stmbet(?!\.rest)
+1699261041	cigien	tarkib-athath\.com
+1699260924	VLAZ	mahaveerdistributors\.com
+1699261036	VLAZ	(?-i:9jl5s8)(?#rb.gy)
+1699261133	cigien	celebchitchat(?!\.com)
+1699261076	VLAZ	celebchitchat\.com
+1699261724	VLAZ	aust\.edu\.lb
+1699262086	cigien	bionicjoints\.com
+1699262932	cigien	vindictadigital\.co\.uk
+1699267569	VLAZ	onestopcontentsolutions\.com
+1699231826	Nick	pixelscalculator\.com
+1699240031	Nick	databio1\.com
+1699243201	Nick	myreceiptify\.com
+1699254177	VLAZ	nuzanthra\.my\.id
+1699266276	VLAZ	thumbnailchecker\.com
+1699269200	VLAZ	peppynite\.com
+1699270868	cigien	chonfo\.com
+1699273045	cigien	shop\.onekey\.so
+1699274094	cigien	dmvedu\.org
