@@ -195,6 +195,15 @@ class GitManager:
                         and (GlobalVars.github_access_token is None)):
                     return (False, "Tell someone to set a GH token")
 
+                # for item #7 below, 
+                # item = regex.sub(r"(?<!\\)\(\?\#[^\)]*\)", "", item)  # Remove comments: comments can have no nested ()
+                # replace (?# not-close-paren ) whose open paren isn't escaped
+                # test: 
+                #    escaped open paren: foo\(?#stuff\)
+                #    empty comment: foo(?#)
+                #    normal comment: foo(?#gmail.com)
+                #    multiple comments: foo(?#comment)bar(?#baz)
+                #
                 payload = {"title": "{0}: {1} {2}".format(username, op.title(), item),
                            "body": "[{0}]({1}) requests the {2} of the {3} `{4}`. See the MS search [here]"
                                    "(https://metasmoke.erwaysoftware.com/search?utf8=%E2%9C%93{5}{6}) and the "
