@@ -204,6 +204,10 @@ class GitManager:
                 #    normal comment: foo(?#gmail.com)
                 #    multiple comments: foo(?#comment)bar(?#baz)
                 #
+                # tested above with:
+                #   r = regex.sub(r"(?<!\\)\(\?\#[^\)]*\)", "", r)
+                # ... and it looked good
+                #
                 payload = {"title": "{0}: {1} {2}".format(username, op.title(), item),
                            "body": "[{0}]({1}) requests the {2} of the {3} `{4}`. See the MS search [here]"
                                    "(https://metasmoke.erwaysoftware.com/search?utf8=%E2%9C%93{5}{6}) and the "
