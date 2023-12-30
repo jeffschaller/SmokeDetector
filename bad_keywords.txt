@@ -1286,7 +1286,6 @@ xylacor
 alpha[\W_]*+rise
 premier[\W_]*+diet(?:[\W_]*+keto)?
 intelliboost[\W_]*+iq
-delhi[\W_]*+escorts?
 sphere[\W_]*+labs
 norton-setup
 luminary[\W_]*+v
@@ -2526,7 +2525,6 @@ easybinarysolutions(?:[\W_]*+(?:at[\W_]*+)?gmail(?:[\W_]*+(?:dot[\W_]*+)?com)?)?
 yan[\W_]*+li[\W_]*+meng
 (?:Dr)?LiMengYan
 investor_anderson(?:@outlook\.com)?
-flutter_list_view
 chubygreat(?:@gmail\.com)?
 mrs[\W_]*+debra[\W_]*+sabina
 jimfundsrecovery
@@ -2905,3 +2903,29 @@ muyern[\W_]*+trust\w*(?:[\W_]*+hack\w*)?(?:[\W_]*+(?:at[\W_]*+)?(?:mail-me|gmail
 Puravive
 (?-i:gNHnGXik4AY)(?#YouTube)
 adrianlamo@consultant\.com
+j[\W_]*+e[\W_]*+f[\W_]*+f[\W_]*+s[\W_]*+i[\W_]*+l[\W_]*+b[\W_]*+e[\W_]*+r[\W_]*+t[\W_]*+3[\W_]*+9(?:[\W_]*+(?:a[\W_]*+t[\W_]*+)?g[\W_]*+m[\W_]*+a[\W_]*+i[\W_]*+l(?:[\W_]*+(?:d[\W_]*+o[\W_]*+t[\W_]*+)?c[\W_]*+o[\W_]*+m)?)?(?#obfuscated jeffsilbert39@gmail.com)
+spinewise(?!\.ca)
+facepdf(?!\.com)
+UFC[\W_]*+\d{3}
+folkwin[\W_]*+expert[\W_]*+recovery(?:[\W_]*+(?:at[\W_]*+)?tech[\W_]*+center(?:[\W_]*+(?:dot[\W_]*+)?com)?)?
+McAfee[\W_]*+Customer[\W_]*+Service
+realexamcollection(?!\.com)
+nefar[\W_]*+tete(?!\.com(?<=nefartete\.com))
+quik[\W_]*+answers(?!\.com(?<=quikanswers\.com))
+Yt7crackersz?(?:_admin)?
+intellitech[\W_]*+data[\W_]*+services?
+delhi[\W_]*+escorts?+(?!\.fun)
+sisgain(?!\.com)
+Gologica
+rupeezy(?!\.in)
+steadfast[\W_]*+nutrition(?!\.in(?<=steadfastnutrition\.in))
+james[\W_]*+miller[\W_]*+recovery(?!\.solutions(?<=jamesmillerrecovery\.solutions))(?:@mail\.com)?
+iBolt[\W_]*+Cyber[\W_]*+Hacker
+windmill[\W_]*+money[\W_]*+loan
+chloe[\W_]*+consultant
+marie[\W_]*+consultancy(?:oz)?(?:@gmail\.com)?
+(?-i:WizardGhosthacker)(?#t.me)
+pro[\W_]*wizard[\W_]*gilbert[\W_]*recovery
+adware[\W_]*+recovery[\W_]*+specialist(?!\.expert(?<=adwarerecoveryspecialist\.expert))
+(?-i:owD4Gk3d)(?#cutt.ly)
+brunoe[\W_]*+quick[\W_]*+hack(?:[\W_]*(?:at[\W_]*+)?g[\W_]*+m[\W_]*+a[\W_]*+i[\W_]*+l[\W_]*+(?:dot[\W_]*+)?com)?

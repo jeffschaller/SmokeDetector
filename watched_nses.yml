@@ -3508,7 +3508,9 @@ items:
 - comment: no longer responding 2021-07-27
   disable: true
   ns: jawatankosong.biz.
-- ns: isnpk.com.
+- comment: NXDOMAIN 2023-12-23 on GitHub Actions, but passing on CircleCI
+  disable: true
+  ns: isnpk.com.
 - comment: no longer responding 2020-10-15
   disable: true
   ns: tigerexpertz.com.
@@ -4558,7 +4560,9 @@ items:
 - ns: hivelocity.net.
 - ns: inhostedns.net.
 - ns: bhhdns.com.
-- ns: amznetwork.net.
+- comment: NXDOMAIN 2023-11-11
+  disable: true
+  ns: amznetwork.net.
 - ns: dynu.com.
 - ns:
   - da73venom.stableserver.net.
@@ -4719,7 +4723,9 @@ items:
 - ns: cbcamerica.org.
 - ns: wpdns.host.
 - ns: serverforme.xyz.
-- ns: nccloud.shop.
+- comment: nxdomain 2023-11-07
+  disable: true
+  ns: nccloud.shop.
 - ns: attorneyvirginiamaryland.com.
 - ns: dynamicsalessolutions.co.uk.
 - ns: dianadns.com.
