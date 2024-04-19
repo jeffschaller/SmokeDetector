@@ -87,6 +87,7 @@ items:
   comment: 61/132 over a year
   disable: true
 - asn: '42831'
+- asn: '42846'
 - asn: '43317'
 - asn: '45012'
 - asn: '45538'
@@ -174,6 +175,7 @@ items:
 - asn: '202053'
   comment: 272/326 but 242 of those are a single domain; disabling 2022-08-26
   disable: true
+- asn: '203020'
 - asn: '203226'
 - asn: '204213'
 - asn: '204601'
@@ -185,6 +187,7 @@ items:
 - asn: '210250'
 - asn: '262254'
 - asn: '393960'
+- asn: '395092'
 - asn: '395970'
 - asn: '397233'
 - asn: '397373'

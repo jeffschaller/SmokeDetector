@@ -59,10 +59,11 @@ SE_SITES_RE = r'(?:{sites})'.format(
         r'(?:{doms})\.com'.format(doms='|'.join(
             [r'askubuntu', r'superuser', r'serverfault', r'stackapps', r'imgur'])),
         r'mathoverflow\.net',
+        r'i\.sstatic\.net',
         r'(?:[a-z]+\.)*stackexchange\.com']))
 SE_SITES_DOMAINS = ['stackoverflow.com', 'askubuntu.com', 'superuser.com', 'serverfault.com',
                     'mathoverflow.net', 'stackapps.com', 'stackexchange.com', 'sstatic.net',
-                    'imgur.com']  # Frequently catching FP
+                    'imgur.com', 'sstatic.net']  # Frequently catching FP
 WHITELISTED_WEBSITES_REGEX = regex_compile_no_cache(r"(?i)upload|\b(?:{})\b".format("|".join([
     "yfrog", "gfycat", "tinypic", "sendvid", "ctrlv", "prntscr", "gyazo", r"youtu\.?be", "past[ie]", "dropbox",
     "microsoft", "newegg", "cnet", "regex101", r"(?<!plus\.)google", "localhost", "ubuntu", "getbootstrap",
@@ -2241,21 +2242,22 @@ city_list = [
     "Calcutta", "Calicut", "Chandigarh",
     "Chennai", "Chittorgarh", "Coimbatore", "Colaba",
     "Darjeeling", "Dehradun", "Dehrdun", "Delhi", "Dharamshala", "Dharamsala", "Durgapur",
-    "Ernakulam", "Faridabad",
+    "Ernakulam", "Etobicoke", "Faridabad",
     "Ghatkopar", "Ghaziabad", "Gurgaon", "Gurugram", "Guwahati",
     "Haldwani", "Haridwar", "Hyderabad",
     "Indore",
     "Jaipur", "Jalandhar", "Jim Corbett",
     "Kandivali", "Kangra", "Kanhangad", "Kanhanjad", "Kashmir", "Karnal", "Kerala",
-    "Kochi", "Kolkata", "Kota", "Kottayam",
+    "Kharghar", "Kochi", "Kolkata", "Kota", "Kottayam",
     "Lokhandwala", "Lonavala", "Lucknow", "Ludhiana",
     "Madurai", "Malad", "Marine Lines", "Manalis", "Mangalore", "Mangaluru", "Marathahalli", "Mayur Vihar",
-    "Meghalaya", "Mehrauli", "Model Town", "Moti Nagar", "Mulund", "Mumbai",
+    "Meerut", "Meghalaya", "Mehrauli", "Model Town", "Moti Nagar", "Multan", "Mulund", "Mumbai",
     "Nagpur", "Nainital", "Nashik", "Neemrana", "Noida",
     "Palam", "Patna", "Pune",
     "Raipur", "Rajkot", "Ramnagar", "Rishikesh", "Rohini",
     "Sarjapur", "Sonipat", "Srinagar", "Surat",
-    "Telangana", "Thane", "Thiruvananthapuram", "Tiruchi", "Tiruchirappalli", "Tirupati",
+    "Tembisa", "Telangana", "Thane", "Thembisa", "Thiruvananthapuram",
+    "Tiruchi", "Tiruchirappalli", "Tirupati",
     "Trichinopoly", "Trichy", "Trivandrum", "Tura",
     "Udaipur", "Uttarakhand",
     "Vadodara", "Vaishali", "Vasant Kunj", "Vasant Vihar", "Visakhapatnam", "Worli",
@@ -2294,7 +2296,7 @@ FindSpam.rule_watched_keywords = create_rule("potentially bad keyword in {}", re
                                              })
 FindSpam.rule_blacklisted_websites = create_rule("blacklisted website in {}", regex="", body_summary=True,
                                                  max_rep=52, max_score=5, skip_creation_sanity_check=True,
-                                                 rule_id="main blacklisted websites")
+                                                 username=True, rule_id="main blacklisted websites")
 FindSpam.rule_blacklisted_usernames = create_rule("blacklisted username", regex="",
                                                   title=False, body=False, username=True,
                                                   skip_creation_sanity_check=True,
@@ -2362,7 +2364,7 @@ create_rule("bad keyword in {}",
             rule_id="bad keywords: movies, free, skin care, training, not bodies")
 
 # Potentially bad keywords in titles and usernames, all sites
-# Not suffient %TP for blacklist: 2020-06-27 01:00UTC: ~77.59%TP
+# Not sufficient %TP for blacklist: 2020-06-27 01:00UTC: ~77.59%TP
 # Title Results: 398/TP:312/FP:81/NAA:3
 # Username Results: 17/TP:10/FP:8/NAA:0
 create_rule("potentially bad keyword in {}",
@@ -2521,7 +2523,7 @@ create_rule("pattern-matching website in {}",
 # Links preceded by arrows >>>
 create_rule("link following arrow in {}",
             r"(?is)(?:>>+|[@:]+>+|==\s*>+|={4,}|===>+|= = =|▶|→|Read More|Click Here).{0,20}"
-            r"https?://(?!i\.stack\.imgur\.com)(?=.{0,200}$)",
+            r"https?://(?!(?:i\.stack\.imgur\.com|i\.sstatic\.net))(?=.{0,200}$)",
             stripcodeblocks=True, answer=False, max_rep=11)
 # Link at the end of a short answer
 create_rule("link at end of {}",
@@ -2722,6 +2724,9 @@ def obfuscated_word(s, site):
         # prevent FP on simple English possessive
         if word[-2:] == "'s" and word[:-2] + "s" in obfuscation_keywords:
             continue
+        # prevent FP on contraction of "who are"
+        if word == "who're":
+            continue
         # prevent FP on stuff like 'I have this "number": 1111'
         word = word.strip(punctuation).lower()
         translated = word.translate(translation_1337)
@@ -2899,7 +2904,7 @@ create_rule("link at beginning of {}",
             '' r'wso|merriam-webster|oracle|magento|example|apple|google|'
             '' r'github|imgur|'
             '' r'stackexchange|stackoverflow|serverfault|superuser|askubuntu)\.com|'
-            r'(?:(?:lvcharts|php|jsfiddle|mathoverflow)\.net)|'
+            r'(?:(?:lvcharts|php|jsfiddle|mathoverflow|sstatic)\.net)|'
             r'github\.io|youtu\.be|edu|'
             r'(?:(?:arxiv|drupal|python|isc|khronos|mongodb|open-std|dartlang|'
             '' r'apache|pydata|gnu|js|wordpress|wikipedia)\.org))'
@@ -2945,29 +2950,33 @@ create_rule("potentially bad keyword in {}",
             username=True, body_summary=False, body=False, title=False,
             max_rep=93, max_score=21,
             rule_id="Potentialy bad keywords: usernames: kukel on japanese.se")
-# Some non-bookended bad keywords
+# mathoverflow.net: specific content in titles
 create_rule("bad keyword in {}",
-            r"(?:"  # Begin group of non-bookended regexes
-            "" r"(?(DEFINE)"
-            "" "" r"(?<obfus_tag>(?-i:(?:[^A-Za-z\d<]++|<(?![/A-Za-z])|</?[A-Za-z]++[^><]*+>|<(?=[/A-Za-z]))*))"
-            "" "" r"(?<obfus_tag_lc>(?-i:(?:[^A-Z\d<]++|<(?![/A-Za-z])|</?[A-Za-z]++[^><]*+>|<(?=[/A-Za-z]))*))"
-            "" r")"
-            "" r"(?:"
-            "" "" r"K(?&obfus_tag)E(?&obfus_tag)M(?&obfus_tag)O(?&obfus_tag)N(?&obfus_tag)O(?&obfus_tag)"
-            "" "" r"P(?&obfus_tag)A(?&obfus_tag)N(?&obfus_tag)T(?&obfus_tag)S(?&obfus_tag)U"
-            "" "" r"|"
-            "" "" r"(?-i:"
-            "" "" "" r"(?:"
-            "" "" "" "" r"K(?&obfus_tag_lc)E(?&obfus_tag_lc)M(?&obfus_tag_lc)O(?&obfus_tag_lc)N(?&obfus_tag_lc)"
-            "" "" "" "" r"O(?&obfus_tag_lc)"
-            "" "" "" r")?P(?&obfus_tag_lc)A(?&obfus_tag_lc)N(?&obfus_tag_lc)T(?&obfus_tag_lc)S(?&obfus_tag_lc)U"
-            "" "" r")"
-            "" "" r"|K(?&obfus_tag)P(?&obfus_tag)P(?&obfus_tag)(?i:r(?&obfus_tag)o(?&obfus_tag)fessional)"
-            "" r")"
-            r")",
-            all=True,
-            username=True, body_summary=True,
-            max_rep=100, max_score=3,
-            rule_id="bad keywords: various with no bookending")
+            r"(?is)(?:^|\b|(?w:\b))"  # Beging bookending
+            r"(?:"
+            # referral[\W_]*+code?
+            "" r"r[\W_]*+e[\W_]*+f[\W_]*+e[\W_]*+r[\W_]*+r[\W_]*+a[\W_]*+l[\W_]*+c[\W_]*+o[\W_]*+d(?:[\W_]*+e)?"
+            # invite[\W_]*+code?
+            "" r"|i[\W_]*+n[\W_]*+v[\W_]*+i[\W_]*+t[\W_]*+e[\W_]*+c[\W_]*+o[\W_]*+d(?:[\W_]*+e)?"
+            "" r"|p[\W_]*+r[\W_]*+o[\W_]*+m[\W_]*+o[\W_]*+c[\W_]*+o[\W_]*+d(?:[\W_]*+e)?"  # promo[\W_]*+code?
+            # Реферальный(?:[\W_]*+код)?
+            "" r"|Р[\W_]*+е[\W_]*+ф[\W_]*+е[\W_]*+р[\W_]*+а[\W_]*+л[\W_]*+ь[\W_]*+н[\W_]*+ы[\W_]*+й"
+            "" r"(?:[\W_]*+к[\W_]*+о[\W_]*+д)?"
+            # referans(?:[\W_]*+kodu)?
+            "" r"|r[\W_]*+e[\W_]*+f[\W_]*+e[\W_]*+r[\W_]*+a[\W_]*+n[\W_]*+s(?:[\W_]*+k[\W_]*+o[\W_]*+d[\W_]*+u)?"
+            "" r"|k[\W_]*+o[\W_]*+d[\W_]*+u"  # kodu
+            "" r"|s[\W_]*+i[\W_]*+g[\W_]*+n[\W_]*+u[\W_]*+p"  # sign[\W_]*+up
+            "" r"|p[\W_]*+a[\W_]*+r[\W_]*+r[\W_]*+a[\W_]*+i[\W_]*+n[\W_]*+a[\W_]*+g[\W_]*+e"  # parrainage
+            "" r"|b[\W_]*+o[\W_]*+n[\W_]*+u[\W_]*+s"  # bonus
+            "" r"|b[\W_]*+o[\W_]*+n[\W_]*+o"  # bono
+            "" r"|r[\W_]*+e[\W_]*+f[\W_]*+e[\W_]*+r[\W_]*+e[\W_]*+n[\W_]*+c[\W_]*+i[\W_]*+a"  # referencia
+            "" r"|推[\W_]*+荐[\W_]*+码"  # 推荐码
+            "" r"|注[\W_]*+册[\W_]*+奖[\W_]*+金"  # 注册奖金
+            r")"
+            r"(?:\b|(?w:\b)|$)",  # End bookending
+            all=False, sites=["mathoverflow.net", "meta.mathoverflow.net"],
+            username=False, body_summary=False, body=False, title=True,
+            max_rep=93, max_score=21,
+            rule_id="bad keywords: various in titles: 2024-04 on mathoverflow.net")
 
 FindSpam.reload_blacklists()
