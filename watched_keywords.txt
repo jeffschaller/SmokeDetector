@@ -43584,7 +43584,6 @@
 1665680685	cigien	influicity(?!\.com)
 1665681638	Spevacus	hustledetective\.com
 1665683275	Ollie	seordev\.com
-1665684418	tripleee	peraichi\.com
 1665684475	tripleee	nbea\.org
 1665685292	tripleee	ghodasarabhaumik(?# medium)
 1665686659	tripleee	7r6\.com
@@ -60902,3 +60901,72 @@
 1713462353	Cow	anuragdigital\.com
 1713481855	Makyen	ethicalhacksrecovery\.com
 1713482709	Makyen	gearheadengineers[\W_]*+com
+1713488596	Jeff Schaller	(?-i:3ie4g)(?#bitly.ws)
+1713503228	Nick	wpallimport\.com
+1713504628	Nick	orbitestates\.in
+1713487859	Vickel	jailmin\.org
+1713487853	Vickel	jailmin\.xn--org-kla
+1713507247	Nick	leadsdubai\.com
+1713510333	Nick	renew-us\.us
+1713511933	VLAZ	mehndidesignworld\.com
+1713512395	Nick	litomatic\.com
+1713512599	VLAZ	worksent\.com
+1713514881	Nick	sree\.?group
+1713515054	Nick	goodmorningwishes\.in
+1713515146	Nick	Good[\W_]*+Morning[\W_]*+Wishes(?!\.in(?<=goodmorningwishes\.in))
+1713515969	Nick	dancingjuices\.com
+1713522008	Jeff Schaller	howtoplaytexasholdempoker\.org
+1713522070	Jeff Schaller	theweightdr\.com
+1713522237	Jeff Schaller	tajvoyagestour\.com
+1713522298	Jeff Schaller	ikyam\.com
+1713522819	Jeff Schaller	akshdigitalsolutions\.com
+1713523383	Jeff Schaller	soulsofindia\.com
+1713523806	Jeff Schaller	ayipost\.com
+1713525926	Cow	radinphysio\.com
+1713526303	Vickel	nikihk\.ca
+1713527520	Jeff Schaller	physioveda\.ae
+1713536159	Jeff Schaller	atlantic-heatingcooling\.com
+1713547070	Vickel	getanybus\.com
+1713547346	Makyen	souls[\W_]*+of[\W_]*+india(?!\.com(?<=soulsofindia\.com))\d*+
+1713547443	Vickel	majorvehicles(?:@gmail\.com)?
+1713550339	VLAZ	mehndi[\W_]*+design(?:[\W_]*+world(?!\.com(?<=mehndidesignworld\.com)))?
+1713550844	Makyen	homicide(?=.{0,40}rate)(?=.{0,40}somalia)
+1713554737	Jeff Schaller	hayabusafight\.com
+1713556978	Jeff Schaller	ncert\.infrexa\.com
+1713557627	Fastnlight	(?-i:P777K1)(?#t.me)
+1713550805	Fastnlight	chart\.scrippter\.com
+1713560914	Fastnlight	akinsete\.blogspot
+1713562427	Makyen	(?-i:plf3x\.png)
+1713562875	Jeff Schaller	spanel\.sjv\.io
+1713568794	Vickel	trusted-fast-btc\.top
+1713568870	Vickel	michaeltwelch01311965(?:@gmail\.com)?
+1713568969	Vickel	michaelanddaniellewelch(?:@gmail\.com)?
+1713573987	Makyen	lauraref
+1713571395	Vickel	faktabet\.co
+1713571703	Vickel	faktabet(?!\.co)
+1713574024	Makyen	mitosbet
+1713582642	Fastnlight	asdecosg\.com
+1713582872	Makyen	as[\W_]*+deco[\W_]*+construction(?:[\W_]*+pte)?(?:[\W_]*+ltd)?
+1713587049	Nick	bodyindexcalculator\.net
+1713589007	Makyen	pounds[\W_]*+to[\W_]*+kilograms[\W_]*+converter[\W_]*+chrome[\W_]*+extension
+1713589060	Makyen	subhagruha[\W_]*+properties(?!\.com(?<=subhagruhaproperties\.com))
+1713589433	Makyen	odmt(?!\.in)
+1713596712	Nisse Engström	petpetcat\.com
+1713596980	Nick	balayar\.com
+1713597012	Nick	balayar(?!\.com)
+1713597036	Nisse Engström	yolo247\.com
+1713597138	Nick	Sagar[\W_]*+Tech[\W_]*+Technical[\W_]*+Solution
+1713597181	Nick	sagartech\.co\.in
+1713597202	Nisse Engström	dukeroyal\.com\.cn
+1713597784	Nick	Energion[\W_]*+Power[\W_]*+Max
+1713618249	Cow	damyno\.com
+1713618082	Vickel	nibavlifts\.ae
+1713560286	Fastnlight	(?-i:4aEo57O)(?#bit.ly)
+1713618614	Vickel	Nibav[\W_]*+(?:Home|house)[\W_]*+Lifts
+1713622479	Makyen	surushatutorials\.blogspot
+1713625711	Fastnlight	jamesastrong\.com
+1713628900	Fastnlight	bottleneckcalculator\.pro
+1713630070	Vickel	bottleneck[\W_]*+calculator(?!\.pro(?<=bottleneckcalculator\.pro))
+1713631354	Fastnlight	eaziishop\.shop
+1713634445	Makyen	1 (770) 666–2531
+1713642231	Vickel	slots777party\.net
