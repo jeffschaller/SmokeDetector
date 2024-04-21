@@ -342,9 +342,6 @@ class GitManager:
     def merge_pull_request(cls, pr_id, comment=""):
         response = requests.get("https://api.github.com/repos/{}/pulls/{}".format(GlobalVars.bot_repo_slug, pr_id),
                                 timeout=GlobalVars.default_requests_timeout)
-        # catch 404 as a special error case; otherwise, it would fall into the generic `not response` case below
-        if (response.status_code == 404):
-            raise ValueError("PR #{} was not found (HTTP 404) -- possible typo?".format(pr_id))
         if not response:
             raise ConnectionError("Cannot connect to GitHub API")
         pr_info = response.json()
