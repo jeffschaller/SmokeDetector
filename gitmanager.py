@@ -343,7 +343,10 @@ class GitManager:
         response = requests.get("https://api.github.com/repos/{}/pulls/{}".format(GlobalVars.bot_repo_slug, pr_id),
                                 timeout=GlobalVars.default_requests_timeout)
         if not response:
-            raise ConnectionError("Cannot connect to GitHub API")
+            if (response.status_code == 404):
+                raise ValueError("PR #{} was not found (HTTP 404) -- possible typo?".format(pr_id))
+            else:
+                raise ConnectionError("Cannot connect to GitHub API")
         pr_info = response.json()
         if pr_info["user"]["login"] != "SmokeDetector":
             raise ValueError("PR #{} is not created by me, so I can't approve it.".format(pr_id))
